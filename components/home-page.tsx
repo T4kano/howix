@@ -2,12 +2,10 @@
 
 import { useState, useEffect, useCallback } from "react"
 import { useSearchParams, useRouter, usePathname } from "next/navigation"
-import { Search } from "lucide-react"
 
 import { Skeleton } from "@/components/ui/skeleton"
-import { Input } from "@/components/ui/input"
 
-import { Header } from "@/components/layout/site-header"
+import { Header } from "@/components/header"
 import { ItemCard } from "@/components/items/ItemCard"
 import { ItemFiltersBar } from "@/components/items/ItemFiltersBar"
 import { PaginationControls } from "@/components/PaginationControls"
@@ -113,11 +111,6 @@ export default function HomePage() {
 
     const totalPages = Math.ceil(total / PAGE_SIZE)
 
-    // const handleHeroSearch = (e: React.FormEvent) => {
-    //     e.preventDefault()
-    //     setFilters({ ...filters, search: heroSearch, page: 1 })
-    // }
-
     return (
         <div className="min-h-screen bg-background">
             <Header />
@@ -135,16 +128,6 @@ export default function HomePage() {
                         Encontrou ou perdeu algo no campus? Publique aqui e ajude a
                         comunidade universitária a se reconectar com seus pertences.
                     </p>
-
-                    {/* <form onSubmit={handleHeroSearch} className="relative mx-auto max-w-xl">
-                        <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
-                        <Input
-                            placeholder="Buscar item perdido ou achado..."
-                            value={heroSearch}
-                            onChange={(e) => setHeroSearch(e.target.value)}
-                            className="h-12 border-border bg-card pl-12 text-base shadow-sm"
-                        />
-                    </form> */}
                 </div>
             </section>
 
