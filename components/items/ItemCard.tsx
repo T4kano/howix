@@ -60,8 +60,8 @@ export function ItemCard({ item, images = [] }: ItemCardProps) {
             </div>
           )}
           <div className="absolute top-2 left-2 flex gap-1.5">
-            <Badge variant="outline" className={typeBadge.className}>{typeBadge.label}</Badge>
-            {statusBadge && <Badge variant="outline" className={statusBadge.className}>{statusBadge.label}</Badge>}
+            <Badge variant="default" className={typeBadge.className}>{typeBadge.label}</Badge>
+            {statusBadge && <Badge variant="default" className={statusBadge.className}>{statusBadge.label}</Badge>}
           </div>
         </div>
         <CardContent className="p-4">
