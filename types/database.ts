@@ -1,6 +1,6 @@
 export interface Profile {
     id: number;
-    user_id: string;
+    auth_user_id: string;
     name: string | null;
     email: string | null;
     phone: string | null;

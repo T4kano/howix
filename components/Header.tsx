@@ -37,7 +37,10 @@ export function Header() {
 
                 <nav className="flex items-center gap-3">
                     {loading ? (
-                        <div className="h-9 w-20 animate-pulse rounded-md bg-muted" />
+                        <div>
+                            <p>Carregando...</p>
+                            <div className="h-9 w-20 animate-pulse rounded-md bg-muted" />
+                        </div>
                     ) : user ? (
                         <>
                             <Button variant="default" size="sm" onClick={() => router.push('/dashboard/items/new')} className="gap-2">
@@ -75,7 +78,7 @@ export function Header() {
                             <Button variant="ghost" size="sm" onClick={() => router.push('/auth/login')}>
                                 Entrar
                             </Button>
-                            <Button variant="default" size="sm" onClick={() => router.push('/auth/register')}>
+                            <Button variant="default" size="sm" onClick={() => router.push('/auth/sign-up')}>
                                 Cadastrar
                             </Button>
                         </>

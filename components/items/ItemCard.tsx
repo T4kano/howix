@@ -14,11 +14,11 @@ export function ItemCard({ item, images = [] }: ItemCardProps) {
   const [imgIndex, setImgIndex] = useState(0);
 
   const typeBadge = item.type === 'lost'
-    ? { label: 'Perdido', className: 'bg-destructive/10 text-destructive border-destructive/20' }
-    : { label: 'Achado', className: 'bg-accent/10 text-accent border-accent/20' };
+    ? { label: 'Perdido', className: 'bg-destructive border-destructive/20' }
+    : { label: 'Achado', className: 'bg-accent border-accent/20' };
 
   const statusBadge = item.status === 'claimed'
-    ? { label: 'Reivindicado', className: 'bg-primary/10 text-primary border-primary/20' }
+    ? { label: 'Reivindicado', className: 'bg-primary border-primary/20' }
     : null;
 
   return (
@@ -60,8 +60,8 @@ export function ItemCard({ item, images = [] }: ItemCardProps) {
             </div>
           )}
           <div className="absolute top-2 left-2 flex gap-1.5">
-            <Badge variant="default" className={typeBadge.className}>{typeBadge.label}</Badge>
-            {statusBadge && <Badge variant="default" className={statusBadge.className}>{statusBadge.label}</Badge>}
+            <Badge className={typeBadge.className}>{typeBadge.label}</Badge>
+            {statusBadge && <Badge className={statusBadge.className}>{statusBadge.label}</Badge>}
           </div>
         </div>
         <CardContent className="p-4">

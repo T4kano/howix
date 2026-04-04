@@ -5,7 +5,7 @@ import { useSearchParams, useRouter, usePathname } from "next/navigation"
 
 import { Skeleton } from "@/components/ui/skeleton"
 
-import { Header } from "@/components/header"
+import { Header } from "@/components/Header"
 import { ItemCard } from "@/components/items/ItemCard"
 import { ItemFiltersBar } from "@/components/items/ItemFiltersBar"
 import { PaginationControls } from "@/components/PaginationControls"
