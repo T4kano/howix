@@ -13,12 +13,15 @@ import { createClient } from '@/lib/supabase/client';
 import type { Campus, Category, ItemImage } from '@/types/database';
 import { toast } from 'sonner';
 import { ImagePlus, X, Loader2 } from 'lucide-react';
-import { useParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 const supabase = createClient();
 
-export default function ItemForm() {
-  const { id } = useParams<{ id: string }>();
+type ItemFormProps = {
+  id?: string
+}
+
+export default function ItemForm({ id }: ItemFormProps) {
   const isEdit = Boolean(id);
   const router = useRouter();
   const { profile } = useAuth();

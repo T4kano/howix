@@ -1,9 +1,19 @@
 'use client';
 
 import ItemForm from "@/components/items/ItemForm";
+import { Suspense } from "react"
 
-export default function NewItemPage() {
+
+type EditItemPageProps = {
+    params: Promise<{ id: string }>
+}
+
+export default async function EditItemPage({ params }: EditItemPageProps) {
+    const { id } = await params
+
     return (
-        <ItemForm />
-    );
+        <Suspense fallback={<div>Carregando formulário...</div>}>
+            <ItemForm id={id} />
+        </Suspense>
+    )
 }
