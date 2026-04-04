@@ -1,5 +1,6 @@
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from "next/image";
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -29,9 +30,15 @@ export function Header() {
         <header className="sticky top-0 z-50 border-b border-border bg-card/80 backdrop-blur-md">
             <div className="container flex h-16 items-center justify-between">
                 <Link href="/" className="flex items-center gap-2">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg gradient-bg">
-                        <Search className="h-5 w-5 text-primary-foreground" />
+                    <div className="flex h-10 w-10  items-center justify-center rounded-lg bg-blue-900">
+                        <Image
+                            src="/univali.svg"
+                            alt="Achados e Perdidos"
+                            width={30}
+                            height={30}
+                        />
                     </div>
+
                     <span className="text-lg font-bold text-foreground">Achados & Perdidos</span>
                 </Link>
 

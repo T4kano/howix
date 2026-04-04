@@ -222,14 +222,14 @@ export default function ItemDetail() {
                 </div>
                 <div className="space-y-2 pt-2">
                   {item.author_phone && (
-                    <a href={`tel:${item.author_phone}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Phone className="h-4 w-4" /> {item.author_phone}
-                    </a>
+                    </div>
                   )}
                   {item.author_whatsapp && (
                     <a href={`https://wa.me/${item.author_whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener"
                       className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                      <MessageCircle className="h-4 w-4" /> WhatsApp
+                      <MessageCircle className="h-4 w-4" /> {item.author_whatsapp}
                     </a>
                   )}
                 </div>

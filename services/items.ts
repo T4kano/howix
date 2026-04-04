@@ -117,8 +117,14 @@ export async function updateItem(id: number, updates: Partial<Item>) {
 }
 
 export async function softDeleteItem(id: number) {
-    return updateItem(id, { deleted_at: new Date().toISOString() } as any);
+    const { error } = await supabase
+        .from("items")
+        .update({ deleted_at: new Date().toISOString() })
+        .eq("id", id)
+
+    if (error) throw error
 }
+
 
 export async function claimItem(id: number) {
     return updateItem(id, { status: 'claimed' });
