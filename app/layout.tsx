@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Geist } from "next/font/google"
 import "./globals.css"
 import { Providers } from "./providers"
+import { Suspense } from "react"
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -27,7 +28,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={`${geistSans.className} antialiased`}>
-        <Providers>{children}</Providers>
+        <Suspense fallback={<div>Carregando aplicação...</div>}>
+          <Providers>{children}</Providers>
+        </Suspense>
       </body>
     </html>
   )
